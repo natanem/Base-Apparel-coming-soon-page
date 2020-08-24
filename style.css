@@ -49,6 +49,7 @@ section article .center{
 .center h1{
     font-size: 4rem;
     font-weight: 600;
+    letter-spacing: 1rem;
     text-transform: uppercase;
 }
 .center h1 span.light{
@@ -195,9 +196,6 @@ footer{
         align-items: center;
         justify-content: flex-start;
         text-align: center;
-    }
-    section article .center h1{
-        letter-spacing: 1rem;
     }
     .hero{
         grid-row: 1;
