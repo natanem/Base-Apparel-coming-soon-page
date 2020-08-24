@@ -1,0 +1,247 @@
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300;400;600&display=swap');
+:root{
+    --desaturated-red: #ce9797;
+    --soft-red: #f96262;
+    --dark-grayish-red: hsl(0, 6%, 24%);
+    --linear1: linear-gradient(135deg,  #ffffff, #fff5f5);
+    --linear2: linear-gradient(135deg,  #f8bfbf,  #ee8c8c);
+}
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    font-size: 16px;
+    font-family: 'Josefin Sans', sans-serif;
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+section {
+    width: 100%;
+    max-width: 90rem;
+    height: 50rem;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 52rem 38rem;
+}
+
+section article{
+    width: 100%;
+    height: 100%;
+    padding: 4rem 13.75rem 10.19rem 10.31rem;
+    background: url(./images/bg-pattern-desktop.svg);
+}
+section article .logo img{
+    width: 9.85rem;
+    height: 2rem;
+}
+section article .center{
+    width: 27.81rem;
+    height: 25.25rem;
+    margin-top: 8.56rem;
+}
+.center h1{
+    font-size: 4rem;
+    font-weight: 600;
+    text-transform: uppercase;
+}
+.center h1 span.light{
+    display: block;
+    font-weight: 300;
+    color: var(--soft-red);
+   
+}
+.center p {
+    font-size: 1rem;
+    line-height: 1.75;
+    color: var(--soft-red);
+    margin-top: 1.68rem;
+}
+.center form{
+    margin-top: 3rem;
+    width: 27.81rem;
+    height: 3.5rem;
+    display: grid;
+    grid-template-columns: 21.56rem 6.25rem;
+    border: 1px solid var(--desaturated-red);
+    border-radius: 1.75rem;
+    /* transition: all .3s ease; */
+}
+.center form:invalid {
+    border: 2px solid var(--soft-red);
+    background: url(./images/icon-error.svg) no-repeat 75% center/1.5rem;
+}
+.center form input{
+    outline: none;
+    border: none;
+    width: 100%;
+    height: 100%;
+    background: none;
+    padding: 0 2.1rem;
+}
+.center form input:active{
+    outline: none;
+}
+.center form input::placeholder{
+    color: var(--desaturated-red);
+}
+.center form input:invalid{
+    
+}
+.center form button{
+    background: var(--linear2);
+    border: 2px solid var(--linear2);
+    outline: none;
+    border-radius: 1.75rem;
+    box-shadow: 0 1rem 1.4rem rgba(198, 110, 110, .25);
+}
+.center form button img{
+    width: .55rem;
+    height: 1.1rem;
+}
+.center .error{
+    margin-top: 12px;
+    margin-left: 2.1rem;
+    color: var(--soft-red);
+    display: none;
+    transition: all .3s ease-in-out;
+}
+.center form:invalid + .error {
+   display: inline-block;
+}
+
+section .hero {
+    width: 100%;
+    height: 100%;
+    background: url(./images/hero-desktop.jpg) no-repeat center center/cover;
+}
+/* section .hero img{
+    width: 100%;
+    height: 100%;
+} */
+footer{
+    position: fixed;
+    width: 100%;
+    left: 50%;
+    bottom: 0;
+    transform: translate(-50%);
+}
+@media screen and (max-width: 1400px){
+    section{
+        grid-template-columns: 60% 40%;
+    }
+    section article{
+        /* padding: 4rem 5rem; */
+        
+    }
+  
+}
+@media screen and (max-width: 1024px){
+    section article{
+        padding: 4rem 5rem;
+        
+    }
+
+}
+@media screen and (max-width: 960px){
+    section article{
+        padding: 4rem 3rem;
+        
+    }
+
+}
+@media screen and (max-width: 850px){
+    section{
+        grid-template-columns: 1fr;
+        grid-template-rows: 29.12rem 20rem;
+    }
+
+    .logo{
+        position: fixed;
+        top: 0;
+        bottom: 0;
+        z-index: 100;
+        height: 5rem;
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        padding-left: 2rem;
+    }
+    section article .logo img{
+        width: 6.2rem;
+        height: 1.25rem;
+    }
+
+    section article{
+     width: 100%;
+     padding: 0;
+     margin: 0;
+     display: flex;
+     align-items: flex-start;
+     justify-content: center;
+     background: none;
+             
+    }
+    section article .center{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: flex-start;
+        text-align: center;
+    }
+    section article .center h1{
+        letter-spacing: 1rem;
+    }
+    .hero{
+        grid-row: 1;
+        width: 100%;
+        height: 20rem;
+        margin: 0;
+        margin-top: 5rem;
+    }
+
+}
+@media screen and (max-width: 500px){
+    section{
+        grid-template-columns: minmax(375px, 1fr);
+        grid-template-rows: 29.12rem 15.6rem;
+    }
+    section article{    
+     margin: 0;
+     padding: 0;
+     margin-top: -5rem;
+    }
+    section article .center{
+        width: 19.4rem;
+        margin: 0;
+        padding: 0;
+    }
+    section article .center h1{
+        font-size: 2.5rem;
+    }
+    section article .center p{
+        font-size: .88rem;
+        margin-top: 0;
+    }
+    section article .center form{
+        width: 19.4rem;
+        margin-top: 2.5rem;
+        height: 3rem;
+        display: grid;
+        grid-template-columns: 15.4rem 4rem;
+        border: 1px solid var(--desaturated-red);
+        border-radius: 1.75rem;
+        /* transition: all .3s ease; */
+    }
+    section .hero{
+        height: 15.6rem;
+        background: url(./images/hero-mobile.jpg) no-repeat center center/cover;
+    }
+}
